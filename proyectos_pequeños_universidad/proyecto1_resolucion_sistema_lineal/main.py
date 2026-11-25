@@ -1,6 +1,7 @@
 import sys
 from src.cli import pedir_sistema_pl as pspl
 from src.solver import resolver_simplex as rs
+from src.plotter import graficar_pl as gpl
 
 def main():
     print("=== Solucionador de Sistemas Lineales ===")
@@ -16,9 +17,12 @@ def main():
         print(f"Valor óptimo Z = {resultado['z_optimo']:.4f}")
         for i, val in enumerate(resultado["variables"], start=1):
             print(f"    x{i} = {val:.4f}")
+        print("\n" + "=" * 45)
+        if len(problema["c"]) in (2, 3):
+            gpl(problema, resultado)
     else:
         print(f"No se puede resolver: {resultado['mensaje']}")
-    print("\n" + "=" * 45)
+        print("\n" + "=" * 45)
 
     
 # El arranque de la aplicacio
