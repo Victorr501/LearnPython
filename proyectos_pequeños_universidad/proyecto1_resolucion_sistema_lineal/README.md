@@ -85,6 +85,6 @@ python main.py
 ## Hoja de Ruta (Fases de Desarrollo)
 - [x] **Fase 0:** Configuración de estructura del proyecto, entorno virtual y documentación.
 - [x] **Fase 1:** Implementación de la interfaz CLI (`src/cli.py`) para captura y validación del problema.
-- [ ] **Fase 2:** Conversión a forma estándar y núcleo del Algoritmo Simplex en tabla (`src/solver.py`).
-- [ ] **Fase 3:** Soporte para restricciones $\ge$ e $=$ mediante el Método de las Dos Fases o Penalización (Gran M).
-- [ ] **Fase 4:** Generación de gráficos 2D de la región factible y solución óptima (`src/plotter.py`).
+- [x] **Fase 2:** Conversión a forma estándar y núcleo del Algoritmo Simplex en tabla (`src/solver.py`).
+- [x] **Fase 3:** Soporte para restricciones $\ge$ e $=$ mediante el Método de las Dos Fases o Penalización (Gran M).
+- [x] **Fase 4:** Generación de gráficos 2D de la región factible y solución óptima (`src/plotter.py`).
