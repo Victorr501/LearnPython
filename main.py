@@ -20,8 +20,8 @@ def limpiar_pantalla() -> None:
 def buscar_ejecutables(carpeta: Path, es_proyecto: bool) -> list[tuple[str, Path]]:
     """
     Devuelve una lista de tuplas (nombre_visible, ruta_al_main_o_script).
-    - En 'proyectos': busca subcarpetas que contengan un 'main.py'.
-    - En 'leet_code' y 'aprender': busca archivos '.py' directamente.
+    - Si es_proyecto=True ('proyectos' y 'leet_code'): busca subcarpetas que contengan un 'main.py'.
+    - Si es_proyecto=False ('aprender'): busca archivos '.py' directamente.
     """
     if not carpeta.exists():
         return []
@@ -102,7 +102,7 @@ def main() -> None:
             break
         elif opcion in CATEGORIAS:
             nombre_cat, ruta_cat = CATEGORIAS[opcion]
-            submenu_categoria(nombre_cat, ruta_cat, es_proyecto=(opcion == "1"))
+            submenu_categoria(nombre_cat, ruta_cat, es_proyecto=(opcion in ("1", "2")))
         else:
             print("Opción no válida.")
             input("Presiona ENTER para continuar...")
